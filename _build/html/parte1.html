@@ -1,0 +1,1010 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Actividad 1 - Visualización de datos &#8212; Actividad 1 - Visualización de Datos</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'parte1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Parte 2 - Actividad 1" href="parte2.html" />
+    <link rel="prev" title="Introducción" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Actividad 1 - Visualización de Datos - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Actividad 1 - Visualización de Datos - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introducción
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Actividad 1 - Visualización de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parte2.html">Parte 2 - Actividad 1</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fparte1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/parte1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Actividad 1 - Visualización de datos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-1">parte 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-1">inciso 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion">Solución</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-2">Inciso 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-3">Inciso 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-4">Inciso 4</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="actividad-1-visualizacion-de-datos">
+<h1>Actividad 1 - Visualización de datos<a class="headerlink" href="#actividad-1-visualizacion-de-datos" title="Link to this heading">#</a></h1>
+<section id="parte-1">
+<h2>parte 1<a class="headerlink" href="#parte-1" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="k">as</span> <span class="nn">cm</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="inciso-1">
+<h3>inciso 1<a class="headerlink" href="#inciso-1" title="Link to this heading">#</a></h3>
+<p>Genere un gráfico que indique el número de medallas concedidas en cada uno de los cinco principales deportes en 2016.</p>
+</section>
+<section id="solucion">
+<h3>Solución<a class="headerlink" href="#solucion" title="Link to this heading">#</a></h3>
+<p>Para realizar la actividad, realizaremos los siguientes pasos:</p>
+<ul class="simple">
+<li><p>paso 1:
+Descargue el conjunto de datos y formatéelo como un DataFrame de pandas.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medallas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;C:/Users/Usuario/Downloads/athlete_events.csv&#39;</span><span class="p">)</span>
+<span class="n">medallas</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Team</th>
+      <th>NOC</th>
+      <th>Games</th>
+      <th>Year</th>
+      <th>Season</th>
+      <th>City</th>
+      <th>Sport</th>
+      <th>Event</th>
+      <th>Medal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>A Dijiang</td>
+      <td>M</td>
+      <td>24.0</td>
+      <td>180.0</td>
+      <td>80.0</td>
+      <td>China</td>
+      <td>CHN</td>
+      <td>1992 Summer</td>
+      <td>1992</td>
+      <td>Summer</td>
+      <td>Barcelona</td>
+      <td>Basketball</td>
+      <td>Basketball Men's Basketball</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>A Lamusi</td>
+      <td>M</td>
+      <td>23.0</td>
+      <td>170.0</td>
+      <td>60.0</td>
+      <td>China</td>
+      <td>CHN</td>
+      <td>2012 Summer</td>
+      <td>2012</td>
+      <td>Summer</td>
+      <td>London</td>
+      <td>Judo</td>
+      <td>Judo Men's Extra-Lightweight</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Gunnar Nielsen Aaby</td>
+      <td>M</td>
+      <td>24.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Denmark</td>
+      <td>DEN</td>
+      <td>1920 Summer</td>
+      <td>1920</td>
+      <td>Summer</td>
+      <td>Antwerpen</td>
+      <td>Football</td>
+      <td>Football Men's Football</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Edgar Lindenau Aabye</td>
+      <td>M</td>
+      <td>34.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Denmark/Sweden</td>
+      <td>DEN</td>
+      <td>1900 Summer</td>
+      <td>1900</td>
+      <td>Summer</td>
+      <td>Paris</td>
+      <td>Tug-Of-War</td>
+      <td>Tug-Of-War Men's Tug-Of-War</td>
+      <td>Gold</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Christine Jacoba Aaftink</td>
+      <td>F</td>
+      <td>21.0</td>
+      <td>185.0</td>
+      <td>82.0</td>
+      <td>Netherlands</td>
+      <td>NED</td>
+      <td>1988 Winter</td>
+      <td>1988</td>
+      <td>Winter</td>
+      <td>Calgary</td>
+      <td>Speed Skating</td>
+      <td>Speed Skating Women's 500 metres</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>paso 2:
+Filtra el DataFrame para incluir solo las filas correspondientes a los ganadores de medallas de 2016.</p></li>
+<li><p>paso 3:
+Descubre las medallas concedidas en 2016 en cada deporte.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medalsnew</span> <span class="o">=</span> <span class="n">medallas</span><span class="p">[</span><span class="n">medallas</span><span class="p">[</span><span class="s1">&#39;Medal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+<span class="n">medconceb</span> <span class="o">=</span> <span class="n">medalsnew</span><span class="p">[</span><span class="n">medalsnew</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2016</span><span class="p">]</span>
+<span class="n">medconceb</span><span class="p">[</span><span class="s1">&#39;Sport&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sport
+Athletics                192
+Swimming                 191
+Rowing                   144
+Football                 106
+Hockey                    99
+Handball                  89
+Cycling                   84
+Canoeing                  82
+Water Polo                78
+Rugby Sevens              74
+Basketball                72
+Volleyball                72
+Wrestling                 72
+Gymnastics                66
+Fencing                   65
+Judo                      56
+Boxing                    51
+Sailing                   45
+Shooting                  45
+Equestrianism             45
+Weightlifting             45
+Diving                    36
+Taekwondo                 32
+Synchronized Swimming     32
+Badminton                 24
+Tennis                    24
+Table Tennis              24
+Archery                   24
+Rhythmic Gymnastics       18
+Beach Volleyball          12
+Triathlon                  6
+Modern Pentathlon          6
+Trampolining               6
+Golf                       6
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos observar que, los 5 deportes con más medallas son:</p>
+<ul class="simple">
+<li><p>Athletics</p></li>
+<li><p>Swimming</p></li>
+<li><p>Rowing</p></li>
+<li><p>Football</p></li>
+<li><p>Hockey</p></li>
+</ul>
+<ul class="simple">
+<li><p>paso 4:
+Enumera los cinco deportes más importantes en función del mayor número de medallas concedidas. Filtra el DataFrame una vez más para incluir solo los registros de los cinco deportes principales en 2016.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medalsnew</span> <span class="o">=</span> <span class="n">medallas</span><span class="p">[</span><span class="n">medallas</span><span class="p">[</span><span class="s1">&#39;Medal&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+<span class="n">medconceb</span> <span class="o">=</span> <span class="n">medalsnew</span><span class="p">[</span><span class="n">medalsnew</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2016</span><span class="p">]</span>
+<span class="n">countmedals</span> <span class="o">=</span> <span class="n">medconceb</span><span class="p">[</span><span class="s1">&#39;Sport&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">topfive</span> <span class="o">=</span> <span class="n">countmedals</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+
+<span class="n">topsports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Athletics&#39;</span><span class="p">,</span> <span class="s1">&#39;Swimming&#39;</span><span class="p">,</span> <span class="s1">&#39;Rowing&#39;</span><span class="p">,</span> <span class="s1">&#39;Football&#39;</span><span class="p">,</span> <span class="s1">&#39;Hockey&#39;</span><span class="p">]</span>
+
+<span class="n">newtop</span> <span class="o">=</span> <span class="n">medconceb</span><span class="p">[</span><span class="n">medconceb</span><span class="p">[</span><span class="s1">&#39;Sport&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">topsports</span><span class="p">)]</span>
+<span class="n">newtop</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>Team</th>
+      <th>NOC</th>
+      <th>Games</th>
+      <th>Year</th>
+      <th>Season</th>
+      <th>City</th>
+      <th>Sport</th>
+      <th>Event</th>
+      <th>Medal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>158</th>
+      <td>62</td>
+      <td>Giovanni Abagnale</td>
+      <td>M</td>
+      <td>21.0</td>
+      <td>198.0</td>
+      <td>90.0</td>
+      <td>Italy</td>
+      <td>ITA</td>
+      <td>2016 Summer</td>
+      <td>2016</td>
+      <td>Summer</td>
+      <td>Rio de Janeiro</td>
+      <td>Rowing</td>
+      <td>Rowing Men's Coxless Pairs</td>
+      <td>Bronze</td>
+    </tr>
+    <tr>
+      <th>814</th>
+      <td>465</td>
+      <td>Matthew "Matt" Abood</td>
+      <td>M</td>
+      <td>30.0</td>
+      <td>197.0</td>
+      <td>92.0</td>
+      <td>Australia</td>
+      <td>AUS</td>
+      <td>2016 Summer</td>
+      <td>2016</td>
+      <td>Summer</td>
+      <td>Rio de Janeiro</td>
+      <td>Swimming</td>
+      <td>Swimming Men's 4 x 100 metres Freestyle Relay</td>
+      <td>Bronze</td>
+    </tr>
+    <tr>
+      <th>1228</th>
+      <td>690</td>
+      <td>Chantal Achterberg</td>
+      <td>F</td>
+      <td>31.0</td>
+      <td>172.0</td>
+      <td>72.0</td>
+      <td>Netherlands</td>
+      <td>NED</td>
+      <td>2016 Summer</td>
+      <td>2016</td>
+      <td>Summer</td>
+      <td>Rio de Janeiro</td>
+      <td>Rowing</td>
+      <td>Rowing Women's Quadruple Sculls</td>
+      <td>Silver</td>
+    </tr>
+    <tr>
+      <th>1529</th>
+      <td>846</td>
+      <td>Valerie Kasanita Adams-Vili (-Price)</td>
+      <td>F</td>
+      <td>31.0</td>
+      <td>193.0</td>
+      <td>120.0</td>
+      <td>New Zealand</td>
+      <td>NZL</td>
+      <td>2016 Summer</td>
+      <td>2016</td>
+      <td>Summer</td>
+      <td>Rio de Janeiro</td>
+      <td>Athletics</td>
+      <td>Athletics Women's Shot Put</td>
+      <td>Silver</td>
+    </tr>
+    <tr>
+      <th>1847</th>
+      <td>1017</td>
+      <td>Nathan Ghar-Jun Adrian</td>
+      <td>M</td>
+      <td>27.0</td>
+      <td>198.0</td>
+      <td>100.0</td>
+      <td>United States</td>
+      <td>USA</td>
+      <td>2016 Summer</td>
+      <td>2016</td>
+      <td>Summer</td>
+      <td>Rio de Janeiro</td>
+      <td>Swimming</td>
+      <td>Swimming Men's 50 metres Freestyle</td>
+      <td>Bronze</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>paso 5:
+Genere un gráfico de barras con los recuentos de registros correspondientes a cada uno de los cinco deportes principales.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">topfive</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">topfive</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;magma&quot;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Medallas concebidas al top 5 deportes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Deportes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Medallas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/beb806218b3ba02fbfc50700bd2ab2050d28c712d0e090944a7616e87858b7e4.png" src="_images/beb806218b3ba02fbfc50700bd2ab2050d28c712d0e090944a7616e87858b7e4.png" />
+</div>
+</div>
+</section>
+<section id="inciso-2">
+<h3>Inciso 2<a class="headerlink" href="#inciso-2" title="Link to this heading">#</a></h3>
+<p>Trace un gráfico que represente la distribución de la edad de los ganadores de medallas en los cinco principales deportes en 2016.</p>
+<ul class="simple">
+<li><p>paso 6:
+Generar un histograma para la característica Edad de todos los ganadores de medallas en los cinco deportes principales (2016).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">topages</span> <span class="o">=</span> <span class="n">newtop</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span>
+<span class="n">color</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">magma</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">topages</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Edades de los ganadores de medallas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Edades&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cantidad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9b3b8c4a29e649925da22e4d585f53db8fc7aa538719579e7e8f01c8e2fa7d01.png" src="_images/9b3b8c4a29e649925da22e4d585f53db8fc7aa538719579e7e8f01c8e2fa7d01.png" />
+</div>
+</div>
+<p>De la gráfica anterior podemos concluir que las edades de los jugadores se distribuyen entre 20 y 32 años aproximadamente.</p>
+</section>
+<section id="inciso-3">
+<h3>Inciso 3<a class="headerlink" href="#inciso-3" title="Link to this heading">#</a></h3>
+<p>Descubre qué equipos nacionales ganaron el mayor número de medallas en los cinco principales deportes en 2016.</p>
+<ul class="simple">
+<li><p>paso 7:
+Genera un gráfico de barras que indique cuántas medallas ganó el equipo de cada país en los cinco deportes principales en 2016.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">teamstable</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="n">newtop</span><span class="p">[</span><span class="s1">&#39;Team&#39;</span><span class="p">],</span> <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;count&#39;</span><span class="p">)</span>
+<span class="n">newtable</span> <span class="o">=</span> <span class="n">teamstable</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">newtable</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#8B008B&quot;</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5cd9675477608c174fb849e8ff01b42352977711499b7b784a7c2916ceb3df7b.png" src="_images/5cd9675477608c174fb849e8ff01b42352977711499b7b784a7c2916ceb3df7b.png" />
+</div>
+</div>
+<p>Los 3 equipos de los paises que ganaron mas medallas fueron: Estados Unidos, Alemania y Gran Bretaña.</p>
+</section>
+<section id="inciso-4">
+<h3>Inciso 4<a class="headerlink" href="#inciso-4" title="Link to this heading">#</a></h3>
+<p>Observe la tendencia del peso medio de los atletas masculinos y femeninos ganadores en los cinco principales deportes en 2016</p>
+<ul class="simple">
+<li><p>paso 8:
+Genere un gráfico de barras que indique el peso medio de los jugadores, clasificados en función del género, que ganaron en los cinco principales deportes en 2016.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pesoprom</span> <span class="o">=</span> <span class="n">newtop</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Sex&#39;</span><span class="p">)[</span><span class="s1">&#39;Weight&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;dark&quot;</span><span class="p">)</span>
+<span class="n">pesoprom</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;#8B008B&quot;</span><span class="p">,</span><span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Medallas concebidas al top 5 deportes según el género&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Género&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Medallas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d16ece1f564d972018a51998c09667bba7774d04c0811c847c1619ce792aea3e.png" src="_images/d16ece1f564d972018a51998c09667bba7774d04c0811c847c1619ce792aea3e.png" />
+</div>
+</div>
+<p>Se puede observar que las mujeres en el top 5 de deportes con más medallas ganadas tienen menor peso que los hombres.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introducción</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="parte2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Parte 2 - Actividad 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parte-1">parte 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-1">inciso 1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solucion">Solución</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-2">Inciso 2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-3">Inciso 3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inciso-4">Inciso 4</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Gwyneth BLanco Durán
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
